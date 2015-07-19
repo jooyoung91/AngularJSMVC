@@ -9,12 +9,18 @@
             { ItemKey: "0008", Name: "TV", Price: "1299" },
             { ItemKey: "0009", Name: "XBOX", Price: "359" },
             { ItemKey: "0010", Name: "Bottle", Price: "2.98" }, 
-            { ItemKey: "0011", Name: "Ice Cream", Price: "1.5"}];
+            { ItemKey: "0011", Name: "Ice Cream", Price: "1.5" }];
+
+var defaultDate = Date.now();
 var ShoppingCartController = function ($scope) {
     $scope.products = Products;
     $scope.Items = [];
     $scope.remove = function (idx) {
         $scope.Items.splice(idx, 1);
+    }
+    $scope.shippingHandling = 0;
+    $scope.updateShippingHandling = function () {
+
     }
     $scope.total = function () {
         var cartTotal = 0;
@@ -54,6 +60,11 @@ var ShoppingCartController = function ($scope) {
             }
         }
     }
+    $scope.ExtendedTotal = 0;
+    updateShippingHandling = function () {
+        $scope.ExtendedTotal = $scope.shippingHandling + $scope.total();
+    }
+    $scope.$watch('shippingHandling', updateShippingHandling)
 }
 
 ShoppingCartController.$inject = ["$scope"];

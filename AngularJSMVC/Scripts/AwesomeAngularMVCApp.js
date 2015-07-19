@@ -1,4 +1,4 @@
-﻿var AwesomeAngularMVCApp = angular.module('AwesomeAngularMVCApp', ['ngRoute']);
+﻿var AwesomeAngularMVCApp = angular.module('AwesomeAngularMVCApp', []); // ['ngRoute']);
 
 AwesomeAngularMVCApp.controller('LandingPageController', LandingPageController);
 AwesomeAngularMVCApp.controller('ShoppingCartController', ShoppingCartController);

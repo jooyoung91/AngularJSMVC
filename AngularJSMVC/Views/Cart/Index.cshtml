@@ -23,14 +23,28 @@
                 <div class="tableCell" style="width: 200px" ng-bind="product.Name"></div>
                 <div class="tableCell" style="width: 150px" ng-bind="product.Price | currency"></div>
             </li>
-            <br /><br /><br /><br /><br />
+            
+
+            <br />
+            <br />
+            <br />
+            <h4>My Cart</h4>
+
             <li class="tableRow" ng-repeat="item in Items">
                 <span>{{item.Name}}</span> &nbsp; &nbsp;<span ng-bind="item.Price | currency"></span> <input type="text" ng-model="item.Qty" />
                 <button type="button" ng-click="remove($index)">Remove</button>
             </li>
-            <li style="list-style:none;">
-                Cart Total: <span> {{total() | currency}}</span>
+            <li class="tableRow">
+                Prodcuct Total: <span> {{total() | currency}}</span>
             </li>
+            <li class="tableRow">
+                Shipping & Handling:
+                <input type="number" ng-model="shippingHandling" />
+
+                Extended Total: {{ExtendedTotal | currency}}
+            </li>
+
+
         </ol>
     </div>
 </body>
