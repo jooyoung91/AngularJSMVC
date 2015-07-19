@@ -1,1 +1,32 @@
-﻿
+﻿@font-face
+{
+    font-family: verdana;
+}
+body 
+{
+    font-family: verdana;
+}
+div.tableCell 
+{
+    display:table-cell;
+    
+}
+
+li.tableRow
+{
+    display:table-row;
+    border: 1px solid red;
+    list-style:none;
+}
+div.tableHeader{
+    height: 25px;
+    background-color: #000000;
+    font-weight: bold;
+    color: #ffffff;
+    text-align:center;
+    
+
+}
+div.cursor{
+    cursor:pointer;
+}

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html ng-app="AwesomeAngularMVCApp" ng-controller="EmployeeController">
+<head>
+    <title ng-bind="fullName()"></title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+    @Scripts.Render("~/bundles/AwesomeAngularMVCApp")
+</head>
+<body>
+    <div>
+        <input id="divFirstName" type="text" ng-model="firstName" />
+        <input id="divSecondName" type="text" ng-model="lastName" />
+
+        <p>
+            Full Name  {{fullName() | uppercase}}
+        </p>
+        <p>
+            Salary {{salary | currency}}
+        </p>
+        <div ng-repeat="company in companies | orderBy : 'Name'">
+            Company: <span ng-bind="company.Name"></span> <br />
+            Position: <span ng-bind="company.Position"></span>
+        </div>
+        <select name="aladinbook">
+            <option ng-repeat="book in books | orderBy : 'Title'" value="{{book.Price}}">{{book.Title}} {{book.Price | currency}}</option>
+        </select>
+    </div>
+</body>
+</html>
