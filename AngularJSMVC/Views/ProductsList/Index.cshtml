@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="AwesomeAngularMVCApp">
+<head>
+	<meta name="viewport" content="width=device-width" />
+	@Styles.Render("~/Content/css")
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+	@Scripts.Render("~/bundles/AwesomeAngularMVCApp")
+</head>
+<body ng-controller="ProductsListController">
+	<div>
+		{{title}}
+	</div>
+</body>
+</html>
